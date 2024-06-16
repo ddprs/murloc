@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murloc RPG</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+            background-color: #222;
+        }
+        #ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        #inventory {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="ui">
+        <h2>Murloc RPG</h2>
+        <div id="gameStatus">
+            <p id="playerHealth">Health: 100</p>
+            <p id="playerLevel">Level: 1</p>
+            <p id="enemyHealth">Enemy Health: 100</p>
+            <p id="quests">Quests: Defeat all enemies</p>
+        </div>
+        <button onclick="attack()">Attack</button>
+        <div id="inventory"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
